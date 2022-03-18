@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 velidateEmail(username);
+                velidatePassword(password);
             }
         });
 
@@ -45,5 +46,16 @@ public class MainActivity extends AppCompatActivity {
          Toast.makeText(this, "Invalid Email Address", Toast.LENGTH_SHORT).show();
          return false;
      }
+    }
+    private boolean velidatePassword(EditText password){
+        String passwordInput = password.getText().toString();
+        if(!(passwordInput.isEmpty())){
+            return true;
+        }
+        else{
+            Toast.makeText(this, "Password Can Not Be Empty !", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
     }
 }
